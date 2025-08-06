@@ -2,8 +2,22 @@ function sanitizeInput(str) {
   return str.replace(/[<>"'/\\&]/g, '');
 }
 
+function scrollTo(element) {
+  $('html, body').animate({
+    scrollTop: element
+  }, 'fast');
+}
+
 $(document).ready(function() {
   const barra_navegacao = $('#barra_navegacao').offset().top - 1;
+  const conteudo_artigo = $('#conteudo-artigo');
+  const conteudo_artigo_html = $('#conteudo-artigo-html');
+  const header_versiculos = $("#header_versiculos");
+  const search_imput = $('#search');
+  const card_ensinamento = $('#ensinamentos .ensinamento');
+  const link_carregar_artigo = $('a.carregar-artigo');
+  const conteudo_artigo_continue_lendo = $("#conteudo-artigo-continue-lendo");
+  const loader_spinner = $("#loader_spinner");
 
   // Bloqueia o click de links maliciosos
   $('a').on('click', function(clickEvent) {
@@ -40,39 +54,37 @@ $(document).ready(function() {
 
     ultimoIndex = novoIndex;
 
-    $("#header_versiculos").text(versiculos[novoIndex]);
+    header_versiculos.text(versiculos[novoIndex]);
   }
 
   // Input de Pesquisa
-  $('#search').on('input change keyup', function () {
+  search_imput.on('input change keyup', function () {
     const termo = sanitizeInput($(this).val().toLowerCase().trim());
 
     if (termo !== '') {
-      $('#ensinamentos .ensinamento').each(function () {
+      card_ensinamento.each(function () {
         const texto = $(this).text().toLowerCase();
         $(this).toggle(texto.includes(termo));
       });
     } else {
       // Se o campo está vazio, mostra todos os posts
-      $('#ensinamentos .ensinamento').show();
+      card_ensinamento.show();
     }
   });
 
   // INCLUIR button_pesquisar
 
   // Carrega o artigo clicado
-  $('a.carregar-artigo').on('click', function(clickEvent) {
+  link_carregar_artigo.on('click', function(clickEvent) {
     var artigo_href = $(this).attr('href').trim().toLowerCase();
 
-    $("#conteudo-artigo").removeClass('visually-hidden');
-    $('#conteudo-artigo-html').empty();
-    $("#conteudo-artigo-continue-lendo").hide();
-    $('#loader').show();
+    conteudo_artigo.removeClass('visually-hidden');
+    conteudo_artigo_html.empty();
+    conteudo_artigo_continue_lendo.hide();
+    loader_spinner.show();
 
     // Scroll para o conteúdo
-    $('html, body').animate({
-        scrollTop: barra_navegacao
-    }, 'fast');
+    scrollTo(barra_navegacao);
 
     setTimeout(() => {
 
@@ -87,9 +99,7 @@ $(document).ready(function() {
           clickEvent.preventDefault();
         } else { // Se não der erro
           // Scroll para o conteúdo
-          $('html, body').animate({
-              scrollTop: barra_navegacao
-          }, 'fast');
+          scrollTo(barra_navegacao);
 
           $("#conteudo-artigo-continue-lendo").removeClass('visually-hidden');
           $("#conteudo-artigo-continue-lendo").show();
