@@ -1,9 +1,46 @@
-body {
-  background-color: #f8f9fa;
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Update CSS variables */
+  }
 }
 
-h1, h2 {
-  #font-family: 'Georgia', serif;
+[data-theme=dark],
+.theme-dark {
+  /* Update CSS variables */
+}
+
+
+/* Chrome, Safari, AND NOW ALSO the Edge Browser and Firefox */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+}
+
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+}
+
+/* Chrome 22-28 */
+@media screen and(-webkit-min-device-pixel-ratio:0) {
+  .selector {-chrome-:only(;
+  );} 
+}
+
+/* WebKit - Google Chrome:All the versions - Safari:All the versions - Opera :14 and Later - Android:All the versions */
+.selector:not(*:root) {
+
+}
+
+/* Supports - Google Chrome 28 > 28, Opera 14 and Opera > 14 */
+@supports (-webkit-appearance:none) {
+
+}
+
+
+
+
+
+body {
+  background-color: #f8f9fa;
 }
 
 footer {
@@ -15,6 +52,93 @@ footer {
 }
 
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    /* CSS rules specific to Chrome and other WebKit-based browsers */
+#loader {
+  display: none;
+  text-align: center;
+  font-family: sans-serif;
+  margin: 20px auto;
+}
+
+.spinner {
+  border: 4px solid #ccc;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 10px;
+}
+
+.divider-top {
+  width: 100%;
+  height: 1px;
+  border-top: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  margin-top: 1px;
+}
+
+.divider {
+  width: 100%;
+  height: 0.2rem;
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+}
+
+
+.ensinamento {
+  text-decoration: none;
+}
+.ensinamento a:hover, .ensinamento:hover p {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+.ensinamento a.carregar-artigo:active {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.ensinamento a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+.ensinamento a.carregar-artigo:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
+
+blockquote {
+  background-color: #f8f9fa;
+  border-left: 5px solid #ccc;
+  margin-left: 18px;
+  padding: 10px;
+}
+
+blockquote p:last-child {
+  margin: 0;
+}
+
+blockquote footer {
+  border-top: 0;
+  display: inline;
+}
+
+
+#erro_ao_carregar {
+  margin-top: 1rem !important;
+}
+
+
+#sobre blockquote {
+  background-color: #fff;
+}
+
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+body {
+  background-color: #fff !important;
 }

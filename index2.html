@@ -1,20 +1,307 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta name="description" content="...">
+  <meta name="author" content="Andrey Djason Viana">
   <title>Ensinamentos Baseados na Bíblia Sagrada</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"/>
-  <script src="js/ia.js" defer></script>
-</head>
-<body class="bg-light">
-  <div class="container py-5">
-    <h1 class="mb-4">Ensinamentos Baseados na Bíblia Sagrada</h1>
-    <textarea id="texto" class="form-control mb-3" rows="5" placeholder="Digite um texto para resumir..."></textarea>
-    <button id="gerar" class="btn btn-primary">Gerar Resumo</button>
-    <div id="resumo" class="mt-4 border rounded p-3 bg-white"></div>
-  </div>
+  <!--<link rel="canonical" href="http://localhost">-->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   
-  <script src="js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+
+  <!-- INCLUIR PESQUISA -->
+  <!-- INCLUIR SEGURANÇA HTTP HEADERS -->
+  <!-- INCLUIR DESIGN RESPONSIVO SE/QUANDO NECESSÁRIO -->
+  <!-- INCLUIR ACESSIBILIDADE - AUMENTO E DIMINUIÇÃO DE LETRAS, VISUALIZAÇÃO/LEITURA PARA DEFICIENTES, LEITURA EM VOZ, TEMA CLARO E ESCURO, ETC -->
+  <!-- INCLUIR SUPORTE PARA LEITURA DE TEXTO DA DIREITA PARA ESQUERDA - E CDN E/OU NOVO DOMÍNIO PARA QUE POSSA SER ACESSADO DE OUTROS PAÍSES COM LIMITAÇÕES (PESQUISAR SE ISSO É VIÁVEL E SEGURO) -->
+  <!-- INCLUIR PARA RECEBER NOVIDADES NO CELULAR/EMAIL -->
+  <!-- INCLUIR SUPORTE COMPLETO PARA PADRÕES DA WEB -->
+  <!-- INCLUIR POSSIBILIDADE DE COMENTAR NAS POSTAGENS, MAS COM MODERAÇÃO DE SUPERVISOR -->
+  <!-- INCLUIR QUE ESTE SITE NÃO TEM SUPORTE AO IE -->
+</head>
+<body>
+  <div class="container"><h2 class="visually-hidden text-center">ESTAMOS TRABALHANDO PARA INCLUIR ACESSIBILIDADE NESTE SITE<br>DESCULPE O TRANSTORNO</h2></div>
+
+  <!-- Cabeçalho -->
+  <header id="topo" class="bg-dark text-white text-center p-4">
+    <h1>Ensinamentos Baseados na Bíblia Sagrada</h1>
+    <p id="header_versiculos" class="lead">"Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai, senão por mim." — João 14:6</p>
+  </header>
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav id="barra_navegacao" class="navbar nav nav-pills navbar-expand-md justify-content-center py-3 navbar-light bg-light border-bottom">
+    <div class="container">
+      <div class="">
+        <ul class="nav me-auto mb-2 mb-md-0 px-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Ensinamentos</a>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main_navbar"
+        aria-controls="main_navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <!--<li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Início</a>
+          </li>-->
+          <li class="nav-item px-2"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item px-2"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <!--<li class="nav-item"><a class="nav-link" href="#">Reflexões</a></li>-->
+          <!--<li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>-->
+          <!--<li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >Dropdown</a
+            >
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>-->
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            id="search"
+            class="form-control me-2"
+            type="search"
+            placeholder="Pesquisar"
+            aria-label="Pesquisar"
+            autocomplete="off"
+          >
+          <button class="btn btn-outline-primary" type="submit" id="button_pesquisar">Ir&nbsp;&gt;<!-- MUDAR PARA UM ÍCONE --></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- FIM DA BARRA DE NAVEGAÇÃO -->
+
+  <div class="divider-top"></div>
+
+  <main>
+    <!-- CONTEÚDO -->
+    <!--<div id="header-conteudo" class="container pt-5" id="">
+      <h2 class="pb-2 text-center">Ensinamentos e Estudos Bíblicos<br>Baseados na Bíblia Sagrada</h2>
+    </div>-->
+
+    <!-- CONTEÚDO DO ARTIGO -->
+    <div id="conteudo-artigo" class="visually-hidden">
+      <div class="container">
+        <div id="loader" class="mt-5">
+          <div class="spinner"></div>
+          <p>Carregando conteúdo...</p>
+        </div>
+        <div id="conteudo-artigo-html" class="row mb-3">
+        </div>
+      </div>
+      <div id="conteudo-artigo-continue-lendo" class="visually-hidden py-0 my-0">
+        <p class="text-center py-0 my-0 mb-4"><h5 class="text-center">&downarrow;&downarrow; CONTINUE LENDO OUTROS ARTIGOS &downarrow;&downarrow;</h5></p>
+      </div>
+
+      <div class="divider"></div>
+    </div>
+
+    <!-- CARDS -->
+    <div id="ensinamentos" class="album py-4 pb-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <a class="carregar-artigo" href="./posts/eu-sou-o-caminho-a-verdade-e-a-vida.html">
+                <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+                <div class="card-body">
+                  <p class="card-text h5 pb-2">“Eu sou o caminho, e a verdade, e a vida”</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a class="btn btn-sm btn-primary">Ler</a>
+                    </div>
+                    <small class="text-body-secondary">03/08/2025</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <a class="carregar-artigo" href="./aposts/eu-sou-o-caminho-a-verdade-e-a-vida.html">
+                <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+                <div class="card-body">
+                  <p class="card-text h5 pb-2">Esse aqui dá um erro intencional.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a class="btn btn-sm btn-primary">
+                        Ler
+                      </a>
+                    </div>
+                    <small class="text-body-secondary">03/08/2025</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+              <div class="card-body">
+                <p class="card-text h5 pb-2">ESTUDO COMPLETO: O Dom de Línguas</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-primary">
+                      Ler
+                    </a>
+                  </div>
+                  <small class="text-body-secondary">03/08/2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+              <div class="card-body">
+                <p class="card-text h5 pb-2">“Eu sou o caminho, e a verdade, e a vida”</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-primary">Ler</a>
+                  </div>
+                  <small class="text-body-secondary">03/08/2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+              <div class="card-body">
+                <p class="card-text h5 pb-2">O que significa “falar em línguas”</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-primary">Ler</a>
+                  </div>
+                  <small class="text-body-secondary">03/08/2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ensinamento col">
+            <div class="card shadow-sm">
+              <img class="card-img-top" src="./images/Gemini_Generated_Image_jmbf2hjmbf2hjmbf.png" alt="" style="height:250px;">
+              <div class="card-body">
+                <p class="card-text h5 pb-2">ESTUDO COMPLETO: O Dom de Línguas</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-primary">Ler</a>
+                  </div>
+                  <small class="text-body-secondary">03/08/2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+    <!-- //FIM DOS CARDS -->
+
+    <div class="divider"></div>
+
+    <!-- SOBRE -->
+    <div class="container p-5 mt-5 mb-5 pb-3 border bg-body-tertiary rounded-5" id="sobre">
+      <h2 class="pb-2 border-bottom">O que é o "Ensinamentos Baseados na Bíblia Sagrada"?</h2>
+      <div class="row g-4 py-2">
+        <div class="col d-flex align-items-start">
+          <!--<div
+            class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3"
+          >
+            <svg class="bi" width="1em" height="1em" aria-hidden="true">
+              <use xlink:href="#toggles2"></use>
+            </svg>
+          </div>-->
+          <div>
+            <!--<h3 class="fs-2 text-body-emphasis">Somos uma plataforma de Estudos Bíblicos</h3>-->
+            <p>Somos uma plataforma de <strong>ensinamentos</strong> com <strong>funtamentos na Bíblia Sagrada Cristã</strong>, mais especificamente a <strong>Bíblia Sagrada Evangélica</strong>.
+              <br>
+              <br>
+              A maioria dos textos bíblicos citados neste site podem ser encontrados em diversas Bíblias de versões diferentes, com pequenas diferenças de escrita, mas a compreensão e entendimento do texto é o mesmo, não muda.
+              <br>
+              <br>
+              Buscamos pesquisar e nos aprofundar nos assuntos tratados aqui. E também, pesquisamos outras versões e traduções em que foram escritos os textos, incluindo isto em cada conteúdo quando possível ou necessário, <strong>trazendo o melhor entendimento possível sobre cada assunto e cada mensagem</strong>.
+              <br>
+              <br>
+              Devemos <strong>ser como os Bereanos</strong>, e como diz em <strong>Atos 17:11</strong>             
+              <blockquote>
+                "Ora, estes de Bereia eram mais nobres que os de Tessalônica, pois receberam a palavra com todo o interesse, examinando todos os dias as Escrituras para ver se as coisas eram, de fato, assim."
+              </blockquote>
+            </p>
+            <p>
+              <strong>Também devemos sempre buscar nas Escrituras</strong> se o que dizem e ensinam é verdadeiro, caso contrário, é anátema. E aqui cito <strong>Gálatas 1:8-9</strong> e disse Jesus:
+              <br>
+              <blockquote>
+                "Mas, ainda que nós mesmos ou um anjo do céu vos pregasse outro evangelho além do que já vos pregamos, seja anátema. Assim, como já vo-lo dissemos, agora de novo também vo-lo digo: se alguém vos anunciar outro evangelho além do que já recebestes, seja anátema."
+              </blockquote></p>
+          </div>
+        </div>
+      </div>
+      <div class="row py-0 my-0">
+        <p class="text-center py-0 my-0">
+          <a href="#topo" class="btn btn-outline-secondary">&uparrow; Voltar ao topo</a>
+        </p>
+      </div>
+    </div>
+    <!-- //FIM DE SOBRE -->
+
+
+  </main>
+  <!-- //FIM DO CONTEÚDO -->
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-1">“Conhecereis a verdade, e a verdade vos libertará.” — João 8:32</p>
+    <small>© 2025 Ensinamentos Baseados na Bíblia Sagrada. Todos os direitos reservados.</small>
+    <!-- Ensinamentos Bíblicos -->
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+  <script src="./js/jquery-3.7.1.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+  <script src="./js/base.js"></script>
+  <script src="./js/color-modes.js"></script>
 </body>
 </html>
+<!--
+  All Rights Reserved
+
+  Copyright (c) 2025 Andrey Djason Viana
+
+  Ensinamentos Baseados na Bíblia Sagrada
+
+  Este projeto e todo o conteúdo aqui apresentado (incluindo design, código, textos e estrutura) são protegidos por direitos autorais. Nenhuma parte pode ser copiada, reproduzida ou distribuída sem permissão explícita do autor.
+
+  Uso pessoal e comercial está autorizado somente para o proprietário legítimo deste projeto.
+-->
