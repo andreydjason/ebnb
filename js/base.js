@@ -74,7 +74,7 @@ $(document).ready(function() {
         scrollTop: barra_navegacao
     }, 'fast');
 
-    setTimeout(() => {
+    //setTimeout(() => {
 
       $('#conteudo-artigo-html').load(artigo_href, function (response, status, xhr) {
         $('#loader').hide();
@@ -109,7 +109,7 @@ $(document).ready(function() {
         }
       });
 
-    }, 1);
+    //}, 1000);
     
     clickEvent.preventDefault();
   });
