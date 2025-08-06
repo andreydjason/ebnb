@@ -8,6 +8,8 @@ function scrollTo(element) {
   }, 'fast');
 }
 
+const removerAcentos = texto => texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
 $(document).ready(function() {
   const header_versiculos = $("#header_versiculos");
   const barra_navegacao = $('#barra_navegacao').offset().top - 1;
@@ -59,13 +61,15 @@ $(document).ready(function() {
 
   // Input de Pesquisa
   search_imput.on('input change keyup', function () {
-    const termo = sanitizeInput($(this).val().toLowerCase().trim());
-
-    if (termo !== '') {
+    const termo_pesquisa = sanitizeInput($(this).val().toLowerCase().trim());
+    const termo_pesquisa_sem_acentos = removerAcentos(termo_pesquisa);
+    
+    if (termo_pesquisa !== '') {
       conteudo_artigo_html.hide();
+      
       card_ensinamento.each(function () {
-        const texto = $(this).text().toLowerCase();
-        $(this).toggle(texto.includes(termo));
+        const card_ensinamento_texto = removerAcentos($(this).text().toLowerCase());
+        $(this).toggle(card_ensinamento_texto.includes(termo_pesquisa_sem_acentos));
       });
     } else {
       // Se o campo está vazio, mostra todos os posts
