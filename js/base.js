@@ -9,15 +9,15 @@ function scrollTo(element) {
 }
 
 $(document).ready(function() {
+  const header_versiculos = $("#header_versiculos");
   const barra_navegacao = $('#barra_navegacao').offset().top - 1;
+  const search_imput = $('#search');
+  const loader_spinner = $("#loader_spinner");
   const conteudo_artigo = $('#conteudo-artigo');
   const conteudo_artigo_html = $('#conteudo-artigo-html');
-  const header_versiculos = $("#header_versiculos");
-  const search_imput = $('#search');
+  const conteudo_artigo_continue_lendo = $("#conteudo-artigo-continue-lendo");
   const card_ensinamento = $('#ensinamentos .ensinamento');
   const link_carregar_artigo = $('a.carregar-artigo');
-  const conteudo_artigo_continue_lendo = $("#conteudo-artigo-continue-lendo");
-  const loader_spinner = $("#loader_spinner");
 
   // Bloqueia o click de links maliciosos
   $('a').on('click', function(clickEvent) {
@@ -62,12 +62,16 @@ $(document).ready(function() {
     const termo = sanitizeInput($(this).val().toLowerCase().trim());
 
     if (termo !== '') {
+      conteudo_artigo.hide();
       card_ensinamento.each(function () {
         const texto = $(this).text().toLowerCase();
         $(this).toggle(texto.includes(termo));
       });
     } else {
       // Se o campo está vazio, mostra todos os posts
+      if (!conteudo_artigo.hasClass('visually-hidden')) {
+        conteudo_artigo.show();
+      }
       card_ensinamento.show();
     }
   });
