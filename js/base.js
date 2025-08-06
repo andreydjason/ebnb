@@ -66,6 +66,7 @@ $(document).ready(function() {
     
     if (termo_pesquisa !== '') {
       conteudo_artigo_html.addClass('visually-hidden');
+      conteudo_artigo_continue_lendo.addClass('visually-hidden');
       
       card_ensinamento.each(function () {
         const card_ensinamento_texto = removerAcentos($(this).text().toLowerCase());
@@ -75,6 +76,7 @@ $(document).ready(function() {
       // Se o campo está vazio, mostra o artigo, se estava aparecento antes da pesquisa
       if (conteudo_artigo_html.hasClass('visually-hidden')) {
         conteudo_artigo_html.removeClass('visually-hidden');
+        conteudo_artigo_continue_lendo.removeClass('visually-hidden');
       }
       
       // Se o campo está vazio, mostra todos os posts
@@ -91,6 +93,7 @@ $(document).ready(function() {
     conteudo_artigo.removeClass('visually-hidden');
     conteudo_artigo_html.empty();
     conteudo_artigo_html.removeClass('visually-hidden');
+    conteudo_artigo_continue_lendo.removeClass('visually-hidden');
     conteudo_artigo_continue_lendo.hide();
     loader_spinner.show();
 
