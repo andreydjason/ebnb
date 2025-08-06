@@ -62,14 +62,14 @@ $(document).ready(function() {
     const termo = sanitizeInput($(this).val().toLowerCase().trim());
 
     if (termo !== '') {
-      conteudo_artigo.hide();
+      conteudo_artigo_html.hide();
       card_ensinamento.each(function () {
         const texto = $(this).text().toLowerCase();
         $(this).toggle(texto.includes(termo));
       });
     } else {
       // Se o campo está vazio, mostra todos os posts
-      if (!conteudo_artigo.hasClass('visually-hidden')) {
+      if (!conteudo_artigo_html.hasClass('visually-hidden')) {
         conteudo_artigo.show();
       }
       card_ensinamento.show();
