@@ -52,7 +52,7 @@ footer {
 }
 
 
-#loader {
+#loader_spinner {
   display: none;
   text-align: center;
   font-family: sans-serif;
