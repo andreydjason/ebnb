@@ -65,17 +65,19 @@ $(document).ready(function() {
     const termo_pesquisa_sem_acentos = removerAcentos(termo_pesquisa);
     
     if (termo_pesquisa !== '') {
-      conteudo_artigo_html.hide();
+      conteudo_artigo_html.addClass('visually-hidden');
       
       card_ensinamento.each(function () {
         const card_ensinamento_texto = removerAcentos($(this).text().toLowerCase());
         $(this).toggle(card_ensinamento_texto.includes(termo_pesquisa_sem_acentos));
       });
     } else {
-      // Se o campo está vazio, mostra todos os posts
-      if (!conteudo_artigo_html.hasClass('visually-hidden')) {
-        conteudo_artigo.show();
+      // Se o campo está vazio, mostra o artigo, se estava aparecento antes da pesquisa
+      if (conteudo_artigo_html.hasClass('visually-hidden')) {
+        conteudo_artigo_html.removeClass('visually-hidden');
       }
+      
+      // Se o campo está vazio, mostra todos os posts
       card_ensinamento.show();
     }
   });
@@ -88,6 +90,7 @@ $(document).ready(function() {
 
     conteudo_artigo.removeClass('visually-hidden');
     conteudo_artigo_html.empty();
+    conteudo_artigo_html.removeClass('visually-hidden');
     conteudo_artigo_continue_lendo.hide();
     loader_spinner.show();
 
