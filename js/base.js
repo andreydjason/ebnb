@@ -93,7 +93,7 @@ $(document).ready(function() {
     setTimeout(() => {
 
       $('#conteudo-artigo-html').load(artigo_href, function (response, status, xhr) {
-        $('#loader').hide();
+        loader_spinner.hide();
 
         if (status === "error") { // Se der erro
           $('#conteudo-artigo-html').html("<div id=\"erro_ao_carregar\" class=\"border-1 rounded-1 list-group-item list-group-item-danger pt-3 my-0\"\><p class=\"text-center\">❌ Desculpe, houve um erro ao carregar o artigo.</p><h6 class=\"text-center py-0 my-0 mb-4\"\>Leia outro artigo enquanto resolvemos o problema — Ou tente novamente mais tarde.</h6\></div>");
